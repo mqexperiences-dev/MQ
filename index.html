@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MQ Experiences | Luxury Boutique Travel</title>
+<meta name="description" content="Inspiring Tomorrow's Traveler - Bespoke luxury travel experiences with expert-led journeys across seven continents">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+<style>
+  :root{
+    --forest:#141414;
+    --forest-2:#ffffff;
+    --cream:#ffffff;
+    --cream-2:#f7f6f3;
+    --gold:#141414;
+    --gold-light:#141414;
+    --text-dark:#141414;
+    --text-muted:#767267;
+    --line:#e4e1d8;
+    --serif: 'Cormorant Garamond', serif;
+    --sans: 'Jost', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:auto;}
+  body{
+    font-family:var(--sans);
+    color:var(--text-dark);
+    background:var(--cream);
+    line-height:1.6;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block; border-radius:6px;}
+  ul{list-style:none;}
+  h1,h2,h3,h4{font-family:var(--serif); font-weight:500; letter-spacing:.01em;}
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:.72rem;
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:14px;
+    display:block;
+  }
+  .container{max-width:1240px; margin:0 auto; padding:0 40px;}
+  .btn{
+    display:inline-block;
+    padding:15px 34px;
+    border:1px solid var(--forest);
+    color:#fff;
+    font-size:.78rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    transition: all .35s ease;
+    background:var(--forest);
+    cursor:pointer;
+    font-weight:500;
+  }
+  .btn:hover{background:#333; border-color:#333;}
+  .btn-dark{border-color:#fff; color:#fff; background:transparent;}
+  .btn-dark:hover{background:#fff; color:var(--forest);}
+
+  /* ===== Top bar ===== */
+  .topbar{
+    background:#ffffff;
+    color:var(--text-muted);
+    font-size:.72rem;
+    letter-spacing:.1em;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .container{display:flex; justify-content:space-between; align-items:center;}
+  .topbar-left{display:flex; gap:28px;}
+  .topbar-left a{color:var(--text-muted); text-transform:uppercase; font-size:.7rem; letter-spacing:.1em;}
+  .topbar-left a:hover{color:var(--text-dark);}
+  .topbar-right{display:flex; gap:28px; align-items:center;}
+  .topbar-right a.phone{color:#2f5fd6; letter-spacing:.03em; font-weight:400;}
+  .topbar a.enquire{color:var(--text-dark); text-transform:uppercase; letter-spacing:.14em; font-size:.7rem; font-weight:500;}
+
+  /* ===== Nav ===== */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    transform:translateY(-100%);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 0;
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:2rem;
+    letter-spacing:.02em;
+    color:var(--text-dark);
+    font-weight:600;
+  }
+  .nav-links{display:flex; gap:40px; align-items:center;}
+  .nav-links a{
+    color:var(--text-dark);
+    font-size:.76rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    transition:color .3s;
+    font-weight:500;
+  }
+  .nav-links a:hover{color:var(--text-muted);}
+  .nav-cta{
+    padding:12px 28px;
+    background:var(--forest); color:#ffffff !important; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; font-weight:500;
+  }
+  .nav-cta:hover{background:#333; color:#ffffff !important;}
+  .menu-toggle{display:none; color:var(--text-dark); font-size:1.4rem; background:none; border:none; cursor:pointer;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative; height:92vh; min-height:620px;
+    display:flex; align-items:center;
+    color:var(--cream);
+    overflow:hidden;
+    opacity:1;
+    transform:none;
+  }
+  .hero-bg-video{
+    position:absolute; inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.55);
+    border-radius:0;
+  }
+  .hero::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(18,32,25,.35) 0%, rgba(18,32,25,.15) 45%, rgba(18,32,25,.75) 100%);
+  }
+  .hero-content{position:relative; z-index:2; max-width:720px; padding:0 40px;}
+  .hero-content .eyebrow{color:#ffffff; opacity:.85;}
+  .hero-content h1{
+    font-size:clamp(2.6rem, 5.6vw, 4.6rem);
+    line-height:1.08;
+    margin-bottom:22px;
+    font-weight:500;
+  }
+  .hero-content h1 em{font-style:italic; font-weight:400;}
+  .hero-content p{
+    font-size:1.15rem; font-weight:300; color:var(--cream-2);
+    max-width:540px; margin-bottom:38px;
+  }
+  .hero-btns{display:flex; gap:18px; flex-wrap:wrap;}
+  .hero-btns .btn-outline-light{
+    padding:15px 34px; border:1px solid rgba(244,239,228,.6);
+    font-size:.78rem; letter-spacing:.18em; text-transform:uppercase;
+  }
+  .hero-btns .btn-outline-light:hover{background:rgba(244,239,228,.12);}
+
+  /* Search bar */
+  .search-bar{
+    position:relative; z-index:5;
+    max-width:1160px; margin:-46px auto 0; padding:0 40px;
+  }
+  .search-panel{
+    background:var(--cream);
+    border-radius:2px;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    padding:30px 36px;
+    display:grid;
+    grid-template-columns:2fr 2fr 2fr auto;
+    gap:24px;
+    align-items:end;
+  }
+  .search-panel .field{display:flex; flex-direction:column; gap:8px;}
+  .search-panel label{
+    font-size:.68rem; text-transform:uppercase; letter-spacing:.14em; color:var(--text-muted);
+  }
+  .search-panel input, .search-panel select{
+    border:none; border-bottom:1px solid #cfc6ae; background:transparent;
+    padding:8px 2px; font-family:var(--sans); font-size:.95rem; color:var(--text-dark);
+  }
+  .search-panel input:focus, .search-panel select:focus{outline:none; border-color:var(--gold);}
+  .search-panel .btn{background:var(--forest); border-color:var(--forest); color:#fff; white-space:nowrap;}
+  .search-panel .btn:hover{background:#333; border-color:#333; color:#fff;}
+
+  section{padding:130px 0 100px;}
+  .section-head{max-width:640px; margin-bottom:64px;}
+  .section-head h2{font-size:clamp(2rem,3.6vw,2.9rem); color:var(--forest);}
+  .section-head p{color:var(--text-muted); margin-top:16px; font-size:1.05rem; max-width:560px;}
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+
+  /* ===== Pet section ===== */
+  .split{
+    display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;
+  }
+  .pet-video-wrap{
+    width:100%;
+    height:560px;
+    border-radius:8px;
+    overflow:hidden;
+    background:#000;
+  }
+  .pet-video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:8px;
+  }
+  .split .eyebrow{color:var(--text-dark);}
+  .split h2{color:var(--forest); font-size:clamp(1.9rem,3vw,2.6rem); margin-bottom:22px;}
+  .split p{color:var(--text-muted); margin-bottom:26px; font-size:1.05rem;}
+  .check-list{margin-bottom:34px;}
+  .check-list li{
+    display:flex; align-items:center; gap:12px; margin-bottom:14px;
+    font-size:1rem; color:var(--text-dark);
+  }
+  .check-list li::before{
+    content:''; width:7px; height:7px; background:var(--gold); border-radius:50%; flex:none;
+  }
+
+  /* ===== Corporate ===== */
+  .bg-forest{background:var(--cream-2); color:var(--text-dark); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .bg-forest .section-head h2{color:var(--text-dark);}
+  .bg-forest .eyebrow{color:var(--text-muted);}
+  .bg-forest .section-head p{color:var(--text-muted);}
+  .card-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:34px;}
+  .card{
+    background:#ffffff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .card img{width:100%; height:300px; object-fit:cover; border-radius:0;}
+  .card-body{padding:32px;}
+  .card-body h3{font-size:1.5rem; color:var(--text-dark); margin-bottom:12px;}
+  .card-body p{color:var(--text-muted); margin-bottom:20px; font-size:.98rem;}
+  .link-arrow{
+    font-size:.75rem; text-transform:uppercase; letter-spacing:.14em; color:var(--text-dark);
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .link-arrow::after{content:'→'; transition:transform .3s;}
+  .card:hover .link-arrow::after{transform:translateX(6px);}
+
+  /* ===== Wellness ===== */
+  .wellness{display:grid; grid-template-columns:1.1fr 1fr; gap:70px; align-items:center;}
+  .wellness-grid{display:grid; grid-template-columns:1fr 1fr; gap:36px; margin:36px 0 40px;}
+  .wellness-item h4{color:var(--forest); font-size:1.2rem; margin-bottom:10px;}
+  .wellness-item p{color:var(--text-muted); font-size:.92rem;}
+  .wellness img{width:100%; height:600px; object-fit:cover; border-radius:8px;}
+
+  /* ===== Rare Access ===== */
+  .rare{position:relative; padding:0;}
+  .rare img{width:100%; height:640px; object-fit:cover; filter:brightness(.5); border-radius:0;}
+  .rare-overlay{
+    position:absolute; inset:0; display:flex; align-items:center;
+    background:linear-gradient(90deg, rgba(18,32,25,.9) 0%, rgba(18,32,25,.55) 55%, rgba(18,32,25,.15) 100%);
+  }
+  .rare-content{max-width:560px; padding:0 60px; color:var(--cream);}
+  .rare-content .eyebrow{color:#ffffff; opacity:.85;}
+  .rare-content h2{font-size:clamp(1.9rem,3.4vw,2.7rem); margin-bottom:22px;}
+  .rare-content p{color:rgba(244,239,228,.7); margin-bottom:30px; font-size:1.02rem;}
+  .rare-features{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-bottom:34px;}
+  .rare-features h5{font-family:var(--serif); font-size:1.2rem; color:#ffffff; margin-bottom:8px;}
+  .rare-features p{font-size:.88rem; color:rgba(244,239,228,.6);}
+  .quote{
+    border-left:2px solid var(--gold); padding-left:20px; font-family:var(--serif);
+    font-size:1.2rem; font-style:italic; color:var(--cream); margin-top:10px;
+  }
+  .quote span{display:block; font-family:var(--sans); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:#ffffff; opacity:.75; margin-top:10px; font-style:normal;}
+
+  /* ===== Destinations ===== */
+  .dest-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
+  }
+  .dest-card{position:relative; height:380px; overflow:hidden; border-radius:8px;}
+  .dest-card img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
+  .dest-card:hover img{transform:scale(1.08);}
+  .dest-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(18,32,25,.88) 0%, rgba(18,32,25,.05) 55%);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:28px;
+    color:var(--cream);
+  }
+  .dest-overlay h3{font-size:1.6rem; margin-bottom:4px;}
+  .dest-overlay .sub{font-size:.85rem; color:#ffffff; opacity:.85; margin-bottom:4px;}
+  .dest-overlay .count{font-size:.78rem; color:rgba(244,239,228,.6);}
+  .view-all{text-align:center; margin-top:56px;}
+
+  /* ===== How do you travel ===== */
+  .tabs{display:flex; gap:6px; justify-content:center; margin-bottom:56px;}
+  .tabs span{
+    padding:12px 26px; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase;
+    border-bottom:2px solid transparent; color:var(--text-muted); cursor:pointer;
+  }
+  .tabs span.active{color:var(--forest); border-color:var(--gold); font-weight:500;}
+  .traveler-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:20px;}
+  .traveler-card{position:relative; height:280px; overflow:hidden; border-radius:8px;}
+  .traveler-card img{width:100%; height:100%; object-fit:cover; transition:transform .6s;}
+  .traveler-card:hover img{transform:scale(1.08);}
+  .traveler-overlay{
+    position:absolute; inset:0; background:linear-gradient(0deg, rgba(18,32,25,.85), rgba(18,32,25,0) 60%);
+    display:flex; align-items:flex-end; justify-content:center; padding-bottom:22px;
+  }
+  .traveler-overlay h3{color:var(--cream); font-size:1.05rem; letter-spacing:.12em;}
+
+  /* ===== Why choose ===== */
+  .why{display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:stretch;}
+  .why-images{position:relative;}
+  .why-images img{width:100%; height:280px; object-fit:cover; border-radius:8px;}
+  .why-images img:first-child{margin-bottom:20px;}
+  .testimonial-box{
+    background:#ffffff; color:var(--text-dark); padding:26px 30px;
+    position:absolute; bottom:20px; left:-30px; max-width:300px; font-family:var(--serif);
+    font-style:italic; font-size:1.05rem; box-shadow:0 20px 50px rgba(20,20,20,.14);
+    border:1px solid var(--line);
+    border-radius:8px;
+  }
+  .testimonial-box span{display:block; font-family:var(--sans); font-style:normal; font-size:.7rem;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-top:14px;}
+  .why-content{padding:20px 0 20px 80px;}
+  .award-list{display:grid; gap:30px; margin-top:20px;}
+  .award-item{display:flex; gap:20px; align-items:flex-start;}
+  .award-num{font-family:var(--serif); font-size:1.6rem; color:var(--gold); flex:none; width:44px;}
+  .award-item h4{color:var(--forest); font-size:1.15rem; margin-bottom:6px;}
+  .award-item p{color:var(--text-muted); font-size:.92rem;}
+  .award-item .tag{font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); display:block; margin-top:4px;}
+
+  /* ===== Enquiry ===== */
+  .enquiry{background:var(--cream-2);}
+  .enquiry-head{text-align:center; max-width:600px; margin:0 auto 60px;}
+  .enquiry-head h2{color:var(--forest); font-size:clamp(1.8rem,3vw,2.5rem);}
+  .enquiry-grid{display:grid; grid-template-columns:2fr 1fr; gap:60px;}
+  .form-card{background:var(--cream); padding:48px; border:1px solid rgba(184,146,90,.25); border-radius:8px;}
+  .form-card h3{color:var(--forest); font-size:1.3rem; margin-bottom:24px; letter-spacing:.04em; text-transform:uppercase; font-family:var(--sans); font-weight:500;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:22px;}
+  .form-group{display:flex; flex-direction:column; gap:8px;}
+  .form-group label{font-size:.76rem; color:var(--text-muted); letter-spacing:.04em;}
+  .form-group input, .form-group select, .form-group textarea{
+    border:none; border-bottom:1px solid #cfc6ae; background:transparent; padding:10px 2px;
+    font-family:var(--sans); font-size:.95rem; color:var(--text-dark);
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none; border-color:var(--gold);}
+  .chip-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;}
+  .chip{padding:8px 18px; border:1px solid #cfc6ae; font-size:.8rem; color:var(--text-muted); cursor:pointer;}
+  .chip.active, .chip:hover{border-color:var(--gold); color:var(--gold); }
+  .newsletter-check{display:flex; align-items:flex-start; gap:10px; margin:26px 0; font-size:.85rem; color:var(--text-muted);}
+  .office-card{background:#ffffff; color:var(--text-dark); padding:40px; height:fit-content; border:1px solid var(--line); border-radius:8px;}
+  .office-card h3{margin-bottom:24px; color:var(--text-dark); text-transform:uppercase; letter-spacing:.14em; font-family:var(--sans); font-weight:500; font-size:.85rem;}
+  .office-row{display:flex; justify-content:space-between; font-size:.9rem; padding:10px 0; border-bottom:1px solid var(--line); color:var(--text-muted);}
+  .office-note{font-size:.76rem; color:var(--text-muted); margin-top:16px;}
+
+  /* ===== Mouse Tracker ===== */
+  #mouse-tracker{
+    position:fixed;
+    width:120px;
+    height:120px;
+    background-color:#ffffff;
+    border-radius:50%;
+    pointer-events:none;
+    mix-blend-mode:difference;
+    z-index:10000;
+    transform:translate(-50%, -50%) translateY(8px);
+    will-change:transform;
+    transition:transform 0.1s ease-out;
+    display:none;
+    filter: url(#ripple-filter);
+  }
+
+  /* ===== Preloader ===== */
+  .preloader{
+    position:fixed;
+    inset:0;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    opacity:1;
+    visibility:visible;
+    transition:opacity 0.6s ease, visibility 0.6s ease;
+  }
+  .preloader.hidden{
+    opacity:0;
+    visibility:hidden;
+  }
+  .preloader-logo{
+    font-family:var(--serif);
+    font-size:8rem;
+    font-weight:600;
+    color:var(--text-dark);
+    letter-spacing:.02em;
+    transform:none;
+    rotate:none;
+    scale:none;
+    transform:translate(0px, 0px);
+    opacity:1;
+    visibility:inherit;
+    margin-bottom:40px;
+  }
+  .preloader-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .preloader-bar{
+    width:200px;
+    height:2px;
+    background:rgba(20,20,20,0.1);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .preloader-progress{
+    width:0%;
+    height:100%;
+    background:var(--forest);
+    border-radius:2px;
+  }
+
+  /* ===== Footer ===== */
+  footer{background:#ffffff; color:var(--text-muted); padding-top:90px; border-top:1px solid var(--line);}
+  .footer-top{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:50px;
+    padding-bottom:70px; border-bottom:1px solid var(--line);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:.9rem; max-width:280px; margin-bottom:24px; color:rgba(244,239,228,.55);}
+  .footer-signup{display:flex; border-bottom:1px solid var(--line); max-width:300px;}
+  .footer-signup input{flex:1; background:none; border:none; padding:8px 0; color:var(--text-dark); font-family:var(--sans);}
+  .footer-signup input::placeholder{color:var(--text-muted);}
+  .footer-signup button{background:none; border:none; color:var(--text-dark); text-transform:uppercase; letter-spacing:.12em; font-size:.75rem; cursor:pointer;}
+  footer h5{color:var(--text-dark); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; margin-bottom:22px; font-family:var(--sans); font-weight:500;}
+  footer ul li{margin-bottom:12px; font-size:.9rem;}
+  footer ul li a:hover{color:var(--text-dark);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; padding:28px 0; font-size:.8rem; color:var(--text-muted);
+    flex-wrap:wrap; gap:12px;
+  }
+  .footer-badges{display:flex; gap:24px;}
+
+  @media (max-width: 980px){
+    .split, .wellness, .why{grid-template-columns:1fr; gap:40px;}
+    .why-content{padding-left:0;}
+    .card-grid, .dest-grid{grid-template-columns:1fr 1fr;}
+    .traveler-grid{grid-template-columns:repeat(3,1fr);}
+    .search-panel{grid-template-columns:1fr 1fr; }
+    .enquiry-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .rare-content{padding:0 30px;}
+  }
+  @media (max-width: 680px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .container{padding:0 22px;}
+    .card-grid, .dest-grid, .traveler-grid{grid-template-columns:1fr;}
+    .search-panel{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .rare img{height:520px;}
+    .testimonial-box{position:static; margin-top:20px;}
+    section{padding:80px 0 60px;}
+    .footer-top{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Mouse Tracker -->
+<div id="mouse-tracker"></div>
+
+<!-- SVG Filter for Mouse Tracker Effects -->
+<svg style="display: none;">
+  <defs>
+    <filter id="ripple-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise" />
+      <feDisplacementMap id="displacement-map" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">MQ.</div>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="#">Find a Consultant</a>
+      <a href="#">Brochure</a>
+    </div>
+    <div class="topbar-right">
+      <a class="phone" href="tel:+1234567890">+1 (234) 567-890</a>
+      <a href="#enquiry" class="enquire">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="nav-links">
+      <a href="#destinations">Destinations</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="logo" href="#top">MQ.</a>
+    <div class="nav-links">
+      <a href="#inspiration">Inspiration</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#enquiry">Enquire</a>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <video autoplay loop muted playsinline class="hero-bg-video">
+    <source src="MQHERO.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <span class="eyebrow">Inspiring Tomorrow's Traveler</span>
+    <h1>Wonders of the<br><em>Ancient World</em></h1>
+    <p>Experience the pinnacle of luxury travel with expertly crafted journeys that redefine exploration</p>
+    <div class="hero-btns">
+      <a href="#destinations" class="btn">Explore Journeys</a>
+      <a href="#contact" class="btn-outline-light">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<div class="search-bar">
+  <div class="search-panel">
+    <div class="field">
+      <label>Where would you like to go?</label>
+      <input type="text" placeholder="Search destinations">
+    </div>
+    <div class="field">
+      <label>When would you like to travel?</label>
+      <input type="text" placeholder="Select dates">
+    </div>
+    <div class="field">
+      <label>Travel Style</label>
+      <select>
+        <option>Any Travel Style</option>
+        <option>Family</option>
+        <option>Couples</option>
+        <option>Solo</option>
+      </select>
+    </div>
+    <button class="btn">Search</button>
+  </div>
+</div>
+
+<section id="experiences">
+  <div class="container split">
+    <div class="pet-video-wrap">
+      <video class="pet-video" autoplay loop muted playsinline>
+        <source src="Doggie2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div>
+      <span class="eyebrow">World-Exclusive Expertise</span>
+      <h2>The Only Pet-Friendly Luxury Expert</h2>
+      <p>We believe true luxury means never having to leave your most loyal companion behind. MQ Experiences is the world's only elite agency specializing in seamless, high-end travel for you and your pets.</p>
+      <ul class="check-list">
+        <li>Private Jet Pet Concierge</li>
+        <li>Exclusive Pet-Friendly Palace Stays</li>
+        <li>Bespoke Destination Pet Care</li>
+      </ul>
+      <a href="#" class="btn btn-dark">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-forest">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Corporate Excellence</span>
+      <h2>Elite Company Retreats</h2>
+      <p>Redefining corporate culture through extraordinary shared experiences in the world's most inspiring locations.</p>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="#">
+        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000" alt="Executive Strategy Summit">
+        <div class="card-body">
+          <h3>Executive Strategy Summits</h3>
+          <p>Secluded estates and private islands designed for high-stakes decision making.</p>
+          <span class="link-arrow">View Package Details</span>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000" alt="Innovation and Team Alignment">
+        <div class="card-body">
+          <h3>Innovation & Team Alignment</h3>
+          <p>Adventure-based retreats that foster trust and visionary thinking across your leadership.</p>
+          <span class="link-arrow">View Package Details</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container wellness">
+    <div>
+      <span class="eyebrow">Rejuvenate</span>
+      <h2>Wellness & Spa Experiences</h2>
+      <p>Indulge in transformative wellness journeys designed to restore balance and inner peace. From ancient healing traditions to modern spa therapies, we curate experiences that nourish body, mind, and spirit.</p>
+      <div class="wellness-grid">
+        <div class="wellness-item">
+          <h4>Spa Therapies</h4>
+          <p>Luxurious massages, facials, and body treatments in world-class spa sanctuaries</p>
+        </div>
+        <div class="wellness-item">
+          <h4>Meditation Retreats</h4>
+          <p>Guided mindfulness practices in serene settings for deep mental clarity</p>
+        </div>
+        <div class="wellness-item">
+          <h4>Sauna & Thermal</h4>
+          <p>Traditional saunas, hammams, and thermal baths for ultimate detoxification</p>
+        </div>
+        <div class="wellness-item">
+          <h4>Holistic Wellness</h4>
+          <p>Yoga, Ayurveda, and integrative programs for complete well-being</p>
+        </div>
+      </div>
+      <a href="#" class="btn btn-dark">Explore Wellness Journeys</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=1000" alt="Luxury spa and wellness retreat">
+  </div>
+</section>
+
+<section class="rare">
+  <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1200" alt="Exclusive Access">
+  <div class="rare-overlay">
+    <div class="rare-content">
+      <span class="eyebrow">The Unattainable</span>
+      <h2>Rare Access Beyond Comparison</h2>
+      <p>Our network reaches places that do not exist on public maps. From after-hours private tours of the Vatican to dinner with tribal elders in the heart of the Amazon, MQ Experiences provides the access other agencies simply cannot touch.</p>
+      <div class="rare-features">
+        <div>
+          <h5>Closed-Door Access</h5>
+          <p>Enter museums and galleries after midnight with personal curators.</p>
+        </div>
+        <div>
+          <h5>Untold Stories</h5>
+          <p>Private audiences with historians, world leaders, and local icons.</p>
+        </div>
+      </div>
+      <div class="quote">
+        MQ opened doors we didn't even know existed.
+        <span>— Forbes Travel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="destinations">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Iconic Locations</span>
+      <h2>Explore Our World</h2>
+      <p>From remote wilderness to cultural capitals, discover bespoke journeys crafted for the discerning traveler</p>
+    </div>
+    <div class="dest-grid">
+      <a class="dest-card" href="#">
+        <img src="https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&q=80&w=800" alt="Africa">
+        <div class="dest-overlay">
+          <h3>Africa</h3>
+          <div class="sub">Safaris & Wilderness</div>
+          <div class="count">24 Destinations</div>
+        </div>
+      </a>
+      <a class="dest-card" href="#">
+        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800" alt="Europe">
+        <div class="dest-overlay">
+          <h3>Europe</h3>
+          <div class="sub">History & Culture</div>
+          <div class="count">38 Destinations</div>
+        </div>
+      </a>
+      <a class="dest-card" href="#">
+        <img src="https://images.unsplash.com/photo-1531737212413-667205e1cda7?auto=format&fit=crop&q=80&w=800" alt="Egypt">
+        <div class="dest-overlay">
+          <h3>Egypt</h3>
+          <div class="sub">Ancient Mysteries</div>
+          <div class="count">12 Destinations</div>
+        </div>
+      </a>
+      <a class="dest-card" href="#">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800" alt="Asia">
+        <div class="dest-overlay">
+          <h3>Asia</h3>
+          <div class="sub">Spiritual Journeys</div>
+          <div class="count">31 Destinations</div>
+        </div>
+      </a>
+      <a class="dest-card" href="#">
+        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=800" alt="South Pacific">
+        <div class="dest-overlay">
+          <h3>South Pacific</h3>
+          <div class="sub">Island Paradises</div>
+          <div class="count">18 Destinations</div>
+        </div>
+      </a>
+      <a class="dest-card" href="#">
+        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&q=80&w=800" alt="Latin America">
+        <div class="dest-overlay">
+          <h3>Latin America</h3>
+          <div class="sub">Rich Heritage</div>
+          <div class="count">26 Destinations</div>
+        </div>
+      </a>
+    </div>
+    <div class="view-all"><a href="#" class="btn btn-dark">View All Destinations</a></div>
+  </div>
+</section>
+
+<section class="bg-forest" id="inspiration">
+  <div class="container">
+    <div class="section-head center">
+      <h2>How Do You Travel?</h2>
+    </div>
+    <div class="tabs">
+      <span class="active">By Traveller</span>
+      <span>By Destination</span>
+      <span>By Month</span>
+    </div>
+    <div class="traveler-grid">
+      <a class="traveler-card" href="#">
+        <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&q=80&w=600" alt="Family">
+        <div class="traveler-overlay"><h3>FAMILY</h3></div>
+      </a>
+      <a class="traveler-card" href="#">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=600" alt="Couples">
+        <div class="traveler-overlay"><h3>COUPLES</h3></div>
+      </a>
+      <a class="traveler-card" href="#">
+        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=600" alt="Groups">
+        <div class="traveler-overlay"><h3>GROUPS</h3></div>
+      </a>
+      <a class="traveler-card" href="#">
+        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=600" alt="Honeymoon">
+        <div class="traveler-overlay"><h3>HONEYMOON</h3></div>
+      </a>
+      <a class="traveler-card" href="#">
+        <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&q=80&w=600" alt="Solo">
+        <div class="traveler-overlay"><h3>SOLO</h3></div>
+      </a>
+    </div>
+    <div class="view-all"><a href="#" class="btn">View More</a></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <h2>Why Discerning Travellers Choose MQ</h2>
+    </div>
+    <div class="why">
+      <div class="why-images">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" alt="Travel experience">
+        <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&q=80&w=800" alt="Travel experience">
+        <div class="testimonial-box">
+          "MQ Experiences curated the most extraordinary journey for us. Every detail was thoughtfully considered and exceeded our expectations"
+          <span>Sarah & James, Maldives</span>
+        </div>
+      </div>
+      <div class="why-content">
+        <div class="award-list">
+          <div class="award-item">
+            <span class="award-num">01</span>
+            <div>
+              <h4>Personalized service tailored to every client's unique vision and desires</h4>
+              <span class="tag">Travel Excellence</span>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-num">02</span>
+            <div>
+              <h4>Recognized as a leading boutique travel specialist for exclusive experiences</h4>
+              <span class="tag">Luxury Travel Awards</span>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-num">03</span>
+            <div>
+              <h4>Top-rated for exceptional customer satisfaction and attention to detail</h4>
+              <span class="tag">Elite Traveler</span>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-num">04</span>
+            <div>
+              <h4>Curators of the world's most extraordinary and rare travel experiences</h4>
+              <span class="tag">Luxury Lifestyle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="enquiry" id="enquiry">
+  <div class="container">
+    <div class="enquiry-head">
+      <span class="eyebrow">We are open tomorrow at 9:00am</span>
+      <h2>Plan Your Journey</h2>
+    </div>
+    <div class="enquiry-grid" id="contact">
+      <div class="form-card">
+        <h3>Your Trip</h3>
+        <div class="form-group" style="margin-bottom:22px;">
+          <label>Where would you like to go?*</label>
+          <div class="chip-row">
+            <span class="chip">Europe</span>
+            <span class="chip">Asia</span>
+            <span class="chip">Africa</span>
+            <span class="chip">Americas</span>
+            <span class="chip">Oceania</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>When would you like to go?</label>
+            <select><option>Select a month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select>
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <select><option>Select a year</option><option>2024</option><option>2025</option><option>2026</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>How long for?*</label>
+            <input type="text" placeholder="e.g. 10 days">
+          </div>
+          <div class="form-group">
+            <label>How many people are travelling?*</label>
+            <select><option>Select a number</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:22px;">
+          <label>How much would you like to spend per person?</label>
+          <div class="chip-row">
+            <span class="chip">$5,000</span>
+            <span class="chip">$7,500</span>
+            <span class="chip">$10,000</span>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:26px;">
+          <label>Any other comments or requests?</label>
+          <textarea rows="3"></textarea>
+        </div>
+
+        <h3>Your Details</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name*</label>
+            <input type="text">
+          </div>
+          <div class="form-group">
+            <label>Telephone*</label>
+            <input type="text">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address*</label>
+            <input type="email">
+          </div>
+          <div class="form-group">
+            <label>Confirm Email Address*</label>
+            <input type="email">
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:24px;">
+          <label>How did you hear about us?</label>
+          <select><option>Select</option><option>Google Search</option><option>Social Media</option><option>Referral</option><option>Other</option></select>
+        </div>
+        <div class="newsletter-check">
+          <input type="checkbox" id="newsletter">
+          <label for="newsletter">Sign up to our newsletter for weekly inspiration curated by our Travel Experts</label>
+        </div>
+        <button class="btn btn-dark">Submit Enquiry</button>
+      </div>
+
+      <div class="office-card">
+        <h3>Office Hours</h3>
+        <div class="office-row"><span>Monday</span><span>9:00am - 11:00pm</span></div>
+        <div class="office-row"><span>Tuesday</span><span>9:00am - 11:00pm</span></div>
+        <div class="office-row"><span>Wednesday</span><span>9:00am - 5:30pm</span></div>
+        <div class="office-row"><span>Thursday</span><span>Closed</span></div>
+        <div class="office-row"><span>Friday</span><span>2:30pm - 11:00pm</span></div>
+        <div class="office-row"><span>Saturday</span><span>Closed</span></div>
+        <div class="office-row" style="border-bottom:none;"><span>Sunday</span><span>Closed</span></div>
+        <p class="office-note">(excluding national holidays)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">MQ EXPERIENCES</div>
+        <p>Inspiring Tomorrow's Traveler. Sign up to receive the latest MQ travel news, inspiration and special offers.</p>
+        <div class="footer-signup">
+          <input type="email" placeholder="Your email address">
+          <button>Join</button>
+        </div>
+      </div>
+      <div>
+        <h5>Our Journeys</h5>
+        <ul>
+          <li><a href="#">Group Journeys</a></li>
+          <li><a href="#">Luxury Tailor Made</a></li>
+          <li><a href="#">Private Flight Journeys</a></li>
+          <li><a href="#">Expedition Cruises</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About MQ</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Newsroom</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 MQ Experiences, LLC. All Rights Reserved.</span>
+      <div class="footer-badges">
+        <span>Licensed Luxury Agent</span>
+        <span>Worldwide Support</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Preloader Animation
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const preloaderLogo = document.querySelector('.preloader-logo');
+    const preloaderProgress = document.querySelector('.preloader-progress');
+    
+    gsap.set(preloaderLogo, {
+      transform: 'translate(0px, 0px)',
+      rotate: 'none',
+      scale: 'none',
+      opacity: 1,
+      visibility: 'inherit'
+    });
+    
+    gsap.to(preloaderProgress, {
+      width: '100%',
+      duration: 1.5,
+      ease: "power2.inOut"
+    });
+    
+    const preloaderTL = gsap.timeline({ delay: 1.5 });
+    
+    preloaderTL.to(preloaderLogo, {
+      scale: 0.8,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.in"
+    })
+    .to(preloader, {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.inOut",
+      onComplete: () => {
+        preloader.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }, "-=0.3");
+  });
+
+  // Register GSAP ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+  
+  // Page animations
+  document.addEventListener('DOMContentLoaded', () => {
+    // Set initial state for hero content elements
+    gsap.set('.hero-content .eyebrow, .hero-content h1, .hero-content p, .hero-btns', {
+      autoAlpha: 0,
+      y: 30
+    });
+    
+    // Animate header sliding down from top
+    const headerTL = gsap.timeline({ 
+      defaults: { 
+        ease: "power3.out",
+        duration: 0.8
+      }
+    });
+    
+    headerTL.to('header.nav', { 
+      autoAlpha: 1, 
+      y: 0,
+      duration: 1
+    }, 0.5);
+    
+    // Animate hero content
+    const heroTL = gsap.timeline({ 
+      defaults: { 
+        ease: "power3.out",
+        duration: 0.8
+      }
+    });
+    
+    heroTL.to('.hero-content .eyebrow', { autoAlpha: 1, y: 0 }, 0)
+          .to('.hero-content h1', { autoAlpha: 1, y: 0 }, 0.1)
+          .to('.hero-content p', { autoAlpha: 1, y: 0 }, 0.2)
+          .to('.hero-btns', { autoAlpha: 1, y: 0 }, 0.3);
+    
+    // Animate destination cards sliding in on scroll
+    gsap.set('.dest-card', { 
+      y: 60, 
+      opacity: 0 
+    });
+    
+    gsap.to('.dest-card', {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: '#destinations',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Interactive elements
+  document.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=> chip.classList.toggle('active'));
+  });
+  document.querySelectorAll('.tabs span').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      document.querySelectorAll('.tabs span').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinksGroups = document.querySelectorAll('.nav-links');
+  menuToggle.addEventListener('click', ()=>{
+    navLinksGroups.forEach(g=> g.style.display = g.style.display==='flex' ? 'none' : 'flex');
+  });
+
+  // Initialize Lenis for smooth momentum scrolling
+  const lenis = new Lenis({
+    duration: 2.5,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 2.5,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    lerp: 0.1,
+  });
+
+  // Connect Lenis to GSAP ScrollTrigger
+  lenis.on('scroll', ScrollTrigger.update);
+  
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
+  // Mouse Tracker with Rotation and Morphing Effects
+  const mouseTracker = document.getElementById('mouse-tracker');
+  const displacementMap = document.getElementById('displacement-map');
+  
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let lastMouseX = mouseX;
+  let lastMouseY = mouseY;
+  
+  let currentScale = 0;
+  let targetScale = 0;
+  let rotationAngle = 0;
+  
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  window.addEventListener('load', () => {
+    mouseTracker.style.display = 'block';
+    document.body.style.cursor = 'none';
+  });
+  
+  function animateMouseTracker() {
+    rotationAngle += 0.3;
+    
+    mouseTracker.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%)) translateY(8px) rotate(${rotationAngle}deg)`;
+    
+    const dx = mouseX - lastMouseX;
+    const dy = mouseY - lastMouseY;
+    const velocity = Math.sqrt(dx * dx + dy * dy);
+    
+    targetScale = Math.min(velocity * 20, 600);
+    currentScale += (targetScale - currentScale) * 0.05;
+    
+    displacementMap.setAttribute('scale', currentScale);
+    
+    lastMouseX = mouseX;
+    lastMouseY = mouseY;
+    
+    requestAnimationFrame(animateMouseTracker);
+  }
+  
+  animateMouseTracker();
+</script>
+
+</body>
+</html>
