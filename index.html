@@ -28,9 +28,32 @@
         }
     }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/CSSRulePlugin.min.js"></script>
+<script src="https://assets.codepen.io/16327/CustomBounce3.min.js"></script>
+<script src="https://assets.codepen.io/16327/CustomEase3.min.js"></script>
+<script src="https://assets.codepen.io/16327/CustomWiggle3.min.js"></script>
+<script src="https://assets.codepen.io/16327/DrawSVGPlugin3.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/EaselPlugin.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/EasePack.min.js"></script>
+<script src="https://assets.codepen.io/16327/Flip.min.js"></script>
+<script src="https://assets.codepen.io/16327/GSDevTools3.min.js"></script>
+<script src="https://assets.codepen.io/16327/InertiaPlugin.min.js"></script>
+<script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
+<script src="https://assets.codepen.io/16327/MotionPathHelper.min.js"></script>
+<script src="https://assets.codepen.io/16327/PhysicsPropsPlugin3.min.js"></script>
+<script src="https://assets.codepen.io/16327/Physics2DPlugin3.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/PixiPlugin.min.js"></script>
+<script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/TextPlugin.min.js"></script>
+<script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+<script src="https://unpkg.com/gsap/dist/Observer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
@@ -475,25 +498,27 @@
   }
 
   /* ===== Footer ===== */
-  footer{background:#ffffff; color:var(--text-muted); padding-top:90px; border-top:1px solid var(--line);}
+  footer{background:#141414; color:rgba(255,255,255,.6); padding-top:90px; border-top:1px solid rgba(255,255,255,.08);}
   .footer-top{
     display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:50px;
-    padding-bottom:70px; border-bottom:1px solid var(--line);
+    padding-bottom:70px; border-bottom:1px solid rgba(255,255,255,.08);
   }
-  .footer-brand .logo{margin-bottom:14px;}
-  .footer-brand p{font-size:.9rem; max-width:280px; margin-bottom:24px; color:rgba(244,239,228,.55);}
-  .footer-signup{display:flex; border-bottom:1px solid var(--line); max-width:420px; width:100%; gap:12px; align-items:center; flex-wrap:wrap;}
-  .footer-signup input{flex:1; min-width:0; background:none; border:none; padding:10px 0; color:var(--text-dark); font-family:var(--sans);}
-  .footer-signup input::placeholder{color:var(--text-muted);}
-  .footer-signup button{background:none; border:1px solid var(--line); color:var(--text-dark); text-transform:uppercase; letter-spacing:.12em; font-size:.85rem; cursor:pointer; padding:10px 18px; white-space:nowrap; border-radius:6px;}
-  footer h5{color:var(--text-dark); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; margin-bottom:22px; font-family:var(--sans); font-weight:500;}
+  .footer-brand .logo{margin-bottom:14px; color:rgba(255,255,255,.9); font-size:1.2rem; letter-spacing:.06em; font-weight:600;}
+  .footer-brand p{font-size:.9rem; max-width:280px; margin-bottom:24px; color:rgba(255,255,255,.45);}
+  .footer-signup{display:flex; border-bottom:1px solid rgba(255,255,255,.15); max-width:420px; width:100%; gap:12px; align-items:center; flex-wrap:wrap;}
+  .footer-signup input{flex:1; min-width:0; background:none; border:none; padding:10px 0; color:rgba(255,255,255,.85); font-family:var(--sans);}
+  .footer-signup input::placeholder{color:rgba(255,255,255,.4);}
+  .footer-signup button{background:none; border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.85); text-transform:uppercase; letter-spacing:.12em; font-size:.85rem; cursor:pointer; padding:10px 18px; white-space:nowrap; border-radius:6px;}
+  .footer-signup button:hover{background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.4);}
+  footer h5{color:rgba(255,255,255,.85); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; margin-bottom:22px; font-family:var(--sans); font-weight:500;}
   footer ul li{margin-bottom:12px; font-size:.9rem;}
-  footer ul li a:hover{color:var(--text-dark);}
+  footer ul li a{color:rgba(255,255,255,.5); transition:color .3s;}
+  footer ul li a:hover{color:rgba(255,255,255,.85);}
   .footer-bottom{
-    display:flex; justify-content:space-between; align-items:center; padding:28px 0; font-size:.8rem; color:var(--text-muted);
+    display:flex; justify-content:space-between; align-items:center; padding:28px 0; font-size:.8rem; color:rgba(255,255,255,.45);
     flex-wrap:wrap; gap:12px;
   }
-  .footer-badges{display:flex; gap:24px;}
+  .footer-badges{display:flex; gap:24px; color:rgba(255,255,255,.35); font-size:.76rem;}
 
   @media (max-width: 980px){
     .split, .wellness, .why{grid-template-columns:1fr; gap:40px;}
@@ -517,8 +542,8 @@
     section{padding:80px 0 60px;}
     .footer-top{grid-template-columns:1fr;}
     .footer-signup{max-width:none; border-bottom:none; padding:10px 0 0 0; gap:12px; flex-direction:column; align-items:stretch;}
-    .footer-signup input{width:100%; border-bottom:1px solid var(--line); padding:12px 16px;}
-    .footer-signup button{width:100%; padding:14px 16px; border-top:0; border:1px solid var(--line); border-radius:8px;}
+    .footer-signup input{width:100%; border-bottom:1px solid rgba(255,255,255,.15); padding:12px 16px;}
+    .footer-signup button{width:100%; padding:14px 16px; border-top:0; border:1px solid rgba(255,255,255,.2); border-radius:8px;}
     .footer-signup input, .footer-signup button{font-size:1rem;}
   }
 
@@ -848,6 +873,149 @@
     }
   }
 
+  /* ===== Rejuvenate 3D Cube Animation ===== */
+  .reju-anim-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .reju-anim-layer .main {
+    position: relative;
+    height: 200vh;
+    width: 100%;
+  }
+  .reju-anim-layer .container {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: grid;
+    place-items: center;
+    border: 2px dashed rgba(255,255,255,0.25);
+    border-radius: 12px;
+  }
+  .reju-anim-layer .container.initial {
+    left: 75%;
+    top: 2%;
+  }
+  .reju-anim-layer .container.second {
+    left: 10%;
+    top: 25%;
+    width: 200px;
+    height: 200px;
+  }
+  .reju-anim-layer .container.second .marker {
+    width: 200px;
+    height: 200px;
+  }
+  .reju-anim-layer .container.third {
+    right: 10%;
+    top: 50%;
+  }
+  .reju-anim-layer .marker {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    outline: 1px dashed rgba(255,255,255,0.08);
+    outline-offset: -6px;
+    opacity: 0.6;
+  }
+  .reju-anim-layer canvas.box {
+    width: 400px;
+    height: 400px;
+    border: dashed 1px #d2ceff;
+    display: block;
+    border-radius: 10px;
+    background: transparent;
+    z-index: 2;
+  }
+
+  /* ===== Bento Gallery ===== */
+  .gallery-wrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .gallery {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: none;
+  }
+  .gallery__item {
+    background-position: 50% 50%;
+    background-size: cover;
+    flex: none;
+    position: relative;
+  }
+  .gallery__item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .gallery--bento {
+    display: grid;
+    gap: 1vh;
+    grid-template-columns: repeat(3, 32.5vw);
+    grid-template-rows: repeat(4, 23vh);
+    justify-content: center;
+    align-content: center;
+  }
+  .gallery--final.gallery--bento {
+    grid-template-columns: repeat(3, 100vw);
+    grid-template-rows: repeat(4, 49.5vh);
+    gap: 1vh;
+  }
+  .gallery--bento .gallery__item:nth-child(1) { grid-area: 1 / 1 / 3 / 2; }
+  .gallery--bento .gallery__item:nth-child(2) { grid-area: 1 / 2 / 2 / 3; }
+  .gallery--bento .gallery__item:nth-child(3) { grid-area: 2 / 2 / 4 / 3; }
+  .gallery--bento .gallery__item:nth-child(4) { grid-area: 1 / 3 / 3 / 3; }
+  .gallery--bento .gallery__item:nth-child(5) { grid-area: 3 / 1 / 3 / 2; }
+  .gallery--bento .gallery__item:nth-child(6) { grid-area: 3 / 3 / 5 / 4; }
+  .gallery--bento .gallery__item:nth-child(7) { grid-area: 4 / 1 / 5 / 2; }
+  .gallery--bento .gallery__item:nth-child(8) { grid-area: 4 / 2 / 5 / 3; }
+  .section {
+    padding: 2rem 5rem;
+  }
+  .section p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* ===== Horizontal Text Scroll ===== */
+  .Horizontal {
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    position: relative;
+    padding: 0;
+  }
+  .Horizontal__text {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    gap: 4vw;
+    padding-left: 100vw;
+    color: #fff;
+  }
+  .Horizontal__text .char {
+    color: #fff;
+  }
+  .heading-xl {
+    font-size: clamp(2rem, 10vw, 12rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+  }
+
   /* ===== Mobile Responsive: Stack Layout ===== */
   @media (max-width: 767px) {
     .parallax-section .floating-element {
@@ -965,7 +1133,7 @@
   </div>
 </section>
 
-<div class="search-bar">
+<div class="search-bar layout-section">
   <div class="search-panel">
     <div class="field">
       <label>Where would you like to go?</label>
@@ -988,7 +1156,7 @@
   </div>
 </div>
 
-<section id="experiences">
+<section id="experiences" class="layout-section">
   <div class="container split">
     <div class="pet-video-wrap">
       <video class="pet-video" autoplay loop muted playsinline preload="auto">
@@ -1010,7 +1178,37 @@
   </div>
 </section>
 
-<section class="bg-forest">
+<!-- ===== GSAP Bento Gallery ===== -->
+<div class="gallery-wrap layout-section">
+  <div class="gallery gallery--bento gallery--switch" id="gallery-8">
+    <div class="gallery__item">
+      <img src="11.jpg" alt="" />
+    </div>
+    <div class="gallery__item">
+      <img src="12.jpg" alt="" />
+    </div>
+    <div class="gallery__item">
+      <img src="13.jpg" alt="" />
+    </div>
+    <div class="gallery__item">
+      <img src="14.jpg" alt="" />
+    </div>
+    <div class="gallery__item">
+      <img src="15.jpg" alt="" />
+    </div>
+    <div class="gallery__item">
+      <img src="16.jpg" alt="" />
+    </div>
+    <div class="gallery__item">
+      <img src="17.jpg" alt="" />
+    </div>
+    <div class="gallery__item">
+      <img src="18.jpg" alt="" />
+    </div>
+  </div>
+</div>
+
+<section class="bg-forest layout-section">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Corporate Excellence</span>
@@ -1038,7 +1236,7 @@
   </div>
 </section>
 
-<section class="rare">
+<section class="rare layout-section">
   <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1200" alt="Exclusive Access">
   <div class="rare-overlay">
     <div class="rare-content">
@@ -1064,8 +1262,23 @@
 </section>
 
 <!-- ===== Rejuvenate Parallax Section ===== -->
-<section id="rejuvenate" class="parallax-section relative min-h-[70vh] py-12 px-4 md:px-8 w-full overflow-visible select-none pb-12">
+<section id="rejuvenate" class="parallax-section layout-section relative min-h-[70vh] py-12 px-4 md:px-8 w-full overflow-visible select-none pb-12">
     
+    <!-- 3D Cube Animation Layer (behind content, above background) -->
+    <div class="reju-anim-layer">
+      <div class="main">
+        <div class="container initial">
+          <!-- canvas.box will be injected here by JS -->
+        </div>
+        <div class="container second">
+          <div class="marker"></div>
+        </div>
+        <div class="container third">
+          <div class="marker"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="rejuvenate-svg-bg">
       <svg width="1056" height="556" xmlns="http://www.w3.org/2000/svg" viewBox="250 0 200 200">
         <defs>
@@ -1174,7 +1387,7 @@
     
 </section>
 
-<section class="newsletter-cta">
+<section class="newsletter-cta layout-section">
   <div class="container newsletter-inner">
     <div class="newsletter-copy">
       <span class="eyebrow" style="color:rgba(255,255,255,.78);">Stay Connected</span>
@@ -1188,7 +1401,7 @@
   </div>
 </section>
 
-<section id="destinations">
+<section id="destinations" class="layout-section">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Iconic Locations</span>
@@ -1249,7 +1462,14 @@
   </div>
 </section>
 
-<section class="bg-forest" id="inspiration">
+<!-- ===== Horizontal Text Scroll ===== -->
+<section class="Horizontal">
+  <div class="container">
+    <h3 class="Horizontal__text heading-xl">"MQ opened doors we didn't even know existed. — Forbes Travel</h3>
+  </div>
+</section>
+
+<section class="bg-forest layout-section" id="inspiration">
   <div class="container">
     <div class="section-head center">
       <h2>How Do You Travel?</h2>
@@ -1285,7 +1505,7 @@
   </div>
 </section>
 
-<section id="about">
+<section id="about" class="layout-section">
   <div class="container">
     <div class="section-head">
       <h2>Why Discerning Travellers Choose MQ</h2>
@@ -1335,7 +1555,7 @@
   </div>
 </section>
 
-<section class="enquiry" id="enquiry">
+<section class="enquiry layout-section" id="enquiry">
   <div class="container">
     <div class="enquiry-head">
       <span class="eyebrow">We are open tomorrow at 9:00am</span>
@@ -1434,7 +1654,7 @@
   </div>
 </section>
 
-<footer>
+<footer class="layout-section">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
@@ -1743,43 +1963,22 @@
       }
     });
 
-    // Animate the rest of the page on scroll with lazy-loaded staggered reveals
-    const scrollRevealSelectors = [
-      '.search-panel',
-      '.split',
-      '#experiences .section-head',
-      '.card-grid .card',
-      '.wellness',
-      '#rejuvenate',
-      '#destinations .section-head',
-      '#destinations .dest-card',
-      '#destinations .traveler-card',
-      '#about .section-head',
-      '#about .testimonial-box',
-      '.form-card',
-      '.office-card',
-      '.footer-top',
-      '.footer-bottom',
-      '.rare',
-      '.why',
-      '.enquiry-grid'
-    ];
-
-    const scrollItems = gsap.utils.toArray(scrollRevealSelectors.join(','));
-    gsap.set(scrollItems, { autoAlpha: 0, y: 40 });
-    scrollItems.forEach((item, index) => {
-      gsap.to(item, {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.95,
-        ease: 'power3.out',
-        delay: index * 0.06,
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 92%',
-          toggleActions: 'play none none none'
-        }
-      });
+    // Single GSAP instance targeting all layout sections with class-based stagger + elastic.out + scrub
+    const layoutSections = gsap.utils.toArray('.layout-section');
+    gsap.set(layoutSections, { autoAlpha: 0, y: 60 });
+    gsap.to(layoutSections, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 2.4,
+      ease: 'elastic.out(1, 0.4)',
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: '.layout-section',
+        start: 'top 88%',
+        end: 'bottom 20%',
+        scrub: 1.2,
+        invalidateOnRefresh: true
+      }
     });
 
     // Headline word reveals are handled on load, so no scroll-trigger is needed here.
@@ -1875,6 +2074,200 @@
   }
   
   animateMouseTracker();
+
+  // ===== GSAP Bento Gallery Flip Animation =====
+  gsap.registerPlugin(Flip);
+
+  let flipCtx;
+
+  const createTween = () => {
+    let galleryElement = document.querySelector("#gallery-8");
+    let galleryItems = galleryElement.querySelectorAll(".gallery__item");
+
+    flipCtx && flipCtx.revert();
+    galleryElement.classList.remove("gallery--final");
+
+    flipCtx = gsap.context(() => {
+      galleryElement.classList.add("gallery--final");
+      const flipState = Flip.getState(galleryItems);
+      galleryElement.classList.remove("gallery--final");
+
+      const flip = Flip.to(flipState, {
+        simple: true,
+        ease: "expoScale(1, 5)"
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: galleryElement,
+          start: "center center",
+          end: "+=100%",
+          scrub: true,
+          pin: galleryElement.parentNode
+        }
+      });
+      tl.add(flip);
+      return () => gsap.set(galleryItems, { clearProps: "all" });
+    });
+  };
+  createTween();
+
+  window.addEventListener("resize", createTween);
+
+  // ===== Rejuvenate 3D Cube Animation =====
+  gsap.registerPlugin(Flip);
+
+  let rejuCtx, rejuRenderer, rejuScene, rejuCamera, rejuMesh, rejuCanvasEl;
+
+  function makeGradientNoiseTexture() {
+    const c = document.createElement("canvas");
+    c.width = c.height = 256;
+    const g = c.getContext("2d");
+
+    g.fillStyle = (() => {
+      const grd = g.createLinearGradient(0, 0, 230, 384);
+      grd.addColorStop(0, "#fec5fb");
+      grd.addColorStop(1, "#00bae2");
+      return grd;
+    })();
+    g.fillRect(0, 0, 256, 256);
+
+    for (let i = 0; i < 4000; i++) {
+      const x = Math.floor(gsap.utils.random(0, 256));
+      const y = Math.floor(gsap.utils.random(0, 256));
+      const a = gsap.utils.random(0.02, 0.1);
+      g.fillStyle = `rgba(0,0,0,${a})`;
+      g.fillRect(x, y, 3, 3);
+    }
+
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.anisotropy = 4;
+    return tex;
+  }
+
+  function initRejuThree(canvas) {
+    rejuRenderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    rejuRenderer.outputColorSpace = THREE.SRGBColorSpace;
+
+    rejuScene = new THREE.Scene();
+    rejuCamera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    rejuCamera.position.set(0, 0, 3);
+
+    const mat = new THREE.MeshBasicMaterial({ map: makeGradientNoiseTexture() });
+    rejuMesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), mat);
+    rejuScene.add(rejuMesh);
+
+    gsap.ticker.add(renderReju);
+    onResizeReju();
+    buildRejuTimeline();
+  }
+
+  function renderReju() {
+    if (!rejuRenderer) return;
+    rejuRenderer.render(rejuScene, rejuCamera);
+  }
+
+  function onResizeReju() {
+    if (!rejuRenderer || !rejuCanvasEl) return;
+    const r = rejuCanvasEl.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    rejuRenderer.setPixelRatio(1);
+    rejuRenderer.setSize(
+      Math.max(1, r.width * dpr),
+      Math.max(1, r.height * dpr),
+      false
+    );
+    rejuCamera.aspect = (r.width || 1) / (r.height || 1);
+    rejuCamera.updateProjectionMatrix();
+  }
+
+  function buildRejuTimeline() {
+    rejuCtx && rejuCtx.revert();
+    rejuCtx = gsap.context(() => {
+      const s2 = Flip.getState(".reju-anim-layer .container.second .marker");
+      const s3 = Flip.getState(".reju-anim-layer .container.third .marker");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#rejuvenate",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 5
+        }
+      });
+
+      tl.add(Flip.fit(rejuCanvasEl, s2, { duration: 2.5, ease: "none" }), 0)
+        .to(
+          rejuMesh.rotation,
+          { x: `+=${Math.PI}`, y: `+=${Math.PI}`, duration: 2.5, ease: "none" },
+          "<"
+        )
+        .addLabel("mid", "+=1.5")
+        .add(Flip.fit(rejuCanvasEl, s3, { duration: 2.5, ease: "none" }), "mid")
+        .to(
+          rejuMesh.rotation,
+          { x: `+=${Math.PI}`, y: `+=${Math.PI}`, duration: 2.5, ease: "none" },
+          "<"
+        );
+    });
+  }
+
+  function buildReju() {
+    rejuCtx && rejuCtx.revert();
+    const start = document.querySelector(".reju-anim-layer .container.initial");
+    if (!rejuCanvasEl) {
+      rejuCanvasEl = document.createElement("canvas");
+      rejuCanvasEl.className = "box";
+      start.appendChild(rejuCanvasEl);
+      initRejuThree(rejuCanvasEl);
+    } else {
+      buildRejuTimeline();
+    }
+  }
+
+  buildReju();
+
+  addEventListener("resize", () => {
+    onResizeReju();
+    buildRejuTimeline();
+  });
+
+  // ===== Horizontal Text Scroll =====
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+
+  const horizontalWrapper = document.querySelector(".Horizontal");
+  const horizontalText = document.querySelector(".Horizontal__text");
+  
+  if (horizontalWrapper && horizontalText) {
+    const split = SplitText.create(".Horizontal__text", { type: "chars, words" });
+
+    const scrollTween = gsap.to(horizontalText, {
+      xPercent: -100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: horizontalWrapper,
+        pin: true,
+        end: "+=5000px",
+        scrub: true
+      }
+    });
+
+    split.chars.forEach((char) => {
+      gsap.from(char, {
+        yPercent: "random(-200, 200)",
+        rotation: "random(-20, 20)",
+        ease: "back.out(1.2)",
+        scrollTrigger: {
+          trigger: char,
+          containerAnimation: scrollTween,
+          start: "left 100%",
+          end: "left 30%",
+          scrub: 1
+        }
+      });
+    });
+  }
 
   // ===== Parallax Rejuvenate Section =====
   document.addEventListener('DOMContentLoaded', () => {
