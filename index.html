@@ -1056,6 +1056,21 @@
       clip-path: none;
       border-radius: 2rem;
     }
+    
+    /* Hide Three.js animation layer on mobile */
+    .reju-anim-layer {
+      display: none !important;
+    }
+    
+    /* Simplify Horizontal Text Scroll on mobile */
+    .Horizontal {
+      height: auto;
+      padding: 2rem 0;
+    }
+    .Horizontal__text {
+      padding-left: 0;
+      transform: none;
+    }
   }
 </style>
 </head>
@@ -2030,7 +2045,7 @@
   });
   gsap.ticker.lagSmoothing(0);
 
-  // Mouse Tracker with Rotation and Morphing Effects
+  // Mouse Tracker with Rotation and Morphing Effects (disabled on mobile)
   const mouseTracker = document.getElementById('mouse-tracker');
   const displacementMap = document.getElementById('displacement-map');
   
@@ -2042,18 +2057,36 @@
   let currentScale = 0;
   let targetScale = 0;
   let rotationAngle = 0;
+  let mouseTrackerEnabled = false;
+  
+  function updateMouseTrackerEnabled() {
+    mouseTrackerEnabled = window.innerWidth > 1024 && !('ontouchstart' in window);
+    if (!mouseTrackerEnabled) {
+      mouseTracker.style.display = 'none';
+      document.body.style.cursor = '';
+    }
+  }
   
   window.addEventListener('mousemove', (e) => {
+    if (!mouseTrackerEnabled) return;
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
   
   window.addEventListener('load', () => {
-    mouseTracker.style.display = 'block';
-    document.body.style.cursor = 'none';
+    updateMouseTrackerEnabled();
+    if (mouseTrackerEnabled) {
+      mouseTracker.style.display = 'block';
+      document.body.style.cursor = 'none';
+    }
   });
   
   function animateMouseTracker() {
+    if (!mouseTrackerEnabled) {
+      requestAnimationFrame(animateMouseTracker);
+      return;
+    }
+    
     rotationAngle += 0.3;
     
     mouseTracker.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%)) translateY(8px) rotate(${rotationAngle}deg)`;
@@ -2074,6 +2107,7 @@
   }
   
   animateMouseTracker();
+  window.addEventListener('resize', updateMouseTrackerEnabled);
 
   // ===== GSAP Bento Gallery Flip Animation =====
   gsap.registerPlugin(Flip);
@@ -2214,6 +2248,9 @@
   }
 
   function buildReju() {
+    // Only initialize Three.js on desktop
+    if (window.innerWidth <= 1024 || ('ontouchstart' in window)) return;
+    
     rejuCtx && rejuCtx.revert();
     const start = document.querySelector(".reju-anim-layer .container.initial");
     if (!rejuCanvasEl) {
@@ -2233,13 +2270,14 @@
     buildRejuTimeline();
   });
 
-  // ===== Horizontal Text Scroll =====
+  // ===== Horizontal Text Scroll (disabled on mobile) =====
   gsap.registerPlugin(SplitText, ScrollTrigger);
 
   const horizontalWrapper = document.querySelector(".Horizontal");
   const horizontalText = document.querySelector(".Horizontal__text");
   
-  if (horizontalWrapper && horizontalText) {
+  // Only run horizontal scroll animation on desktop
+  if (horizontalWrapper && horizontalText && window.innerWidth > 1024 && !('ontouchstart' in window)) {
     const split = SplitText.create(".Horizontal__text", { type: "chars, words" });
 
     const scrollTween = gsap.to(horizontalText, {
@@ -2267,6 +2305,10 @@
         }
       });
     });
+  } else if (horizontalWrapper) {
+    // On mobile, just show the text without animation
+    horizontalText.style.paddingLeft = '0';
+    horizontalText.style.transform = 'none';
   }
 
   // ===== Parallax Rejuvenate Section =====
