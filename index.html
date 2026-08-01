@@ -1346,6 +1346,132 @@
   </div>
 </div>
 
+<!-- ===== Rejuvenate Parallax Section ===== -->
+<section id="rejuvenate" class="parallax-section layout-section relative min-h-[70vh] py-12 px-4 md:px-8 w-full overflow-visible select-none pb-12">
+    
+    <!-- 3D Cube Animation Layer (behind content, above background) -->
+    <div class="reju-anim-layer">
+      <div class="main">
+        <div class="container initial">
+          <!-- canvas.box will be injected here by JS -->
+        </div>
+        <div class="container second">
+          <div class="marker"></div>
+        </div>
+        <div class="container third">
+          <div class="marker"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rejuvenate-svg-bg">
+      <svg width="1056" height="556" xmlns="http://www.w3.org/2000/svg" viewBox="250 0 200 200">
+        <defs>
+          <pattern id="pat1" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="scale(8) rotate(45)" viewBox="0 0 1 1">
+            <path fill="#ffffff" d="M 0 .5 C .5 .5 0 1 .5 1 C .5 .5 1 1 1 .5 C .5 .5 1 0 .5 0 C .5 .5 0 0 0 .5 z">
+              <animate dur="5s" attributeName="d" repeatDur="indefinite" calcMode="spline" keySplines="0.36 0 0.64 1; 0.36 0 0.64 1" values="M 0 .5 C .5 .5 0 1 .5 1 C .5 .5 1 1 1 .5 C .5 .5 1 0 .5 0 C .5 .5 0 0 0 .5 z;M 0 .5 C 0 1 .5 .5 .5 1 C 1 1 .5 .5 1 .5 C 1 0 .5 .5 .5 0 C 0 0 .5 .5 0 .5 z;M 0 .5 C .5 .5 0 1 .5 1 C .5 .5 1 1 1 .5 C .5 .5 1 0 .5 0 C .5 .5 0 0 0 .5 z"/>
+            </path>
+          </pattern>
+        </defs>
+        <rect width="956" height="556" fill="url(#pat1)"/>
+      </svg>
+    </div>
+
+    <!-- Header & Graphic Vector Arrow Area -->
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8 lg:mb-12">
+        <div class="lg:col-span-8 flex flex-col justify-center">
+            <span class="text-xs uppercase tracking-[0.3em] text-amber-700/70 font-semibold mb-3 font-sans" style="letter-spacing:.28em;">Rejuvenate</span>
+            <h2 class="rejuvenate-heading" style="color:#1a1a1a;">
+                Wellness & Spa<br>
+                <span id="serif-underline" class="title-serif" style="color:#1a1a1a;">Experiences.</span>
+            </h2>
+            <p class="mt-3 text-gray-500 text-sm md:text-base max-w-md">
+                Indulge in transformative wellness journeys designed to restore balance and inner peace. From ancient healing traditions to modern spa therapies, we curate experiences that nourish body, mind, and spirit.
+            </p>
+        </div>
+        
+        <!-- Graphic hand-drawn style arrow SVG -->
+        <div class="hidden lg:flex lg:col-span-4 items-center justify-end relative">
+            <svg class="w-[200px] h-[200px] text-amber-700/40 transform rotate-[15deg]" viewBox="0 0 443 454" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="maskarrowtext_rejuvenate">
+                    <path class="mask-path" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M359.477 453.019C359.488 453.324 359.743 453.562 360.048 453.551L365.011 453.376C365.315 453.365 365.554 453.11 365.543 452.805C365.532 452.501 365.277 452.262 364.972 452.273L360.56 452.429L360.405 448.017C360.394 447.712 360.138 447.474 359.834 447.485C359.529 447.496 359.291 447.751 359.302 448.056L359.477 453.019ZM1.13069 19.0358C201.979 -29.9272 338.641 28.0524 401.572 123.362C464.513 218.687 453.828 351.533 359.625 452.623L360.432 453.376C454.944 351.955 465.745 218.551 402.493 122.754C339.23 26.9416 202.021 -31.0734 0.869309 17.9636L1.13069 19.0358Z" />
+                </mask>
+                <path d="M359.477 453.019C359.488 453.324 359.743 453.562 360.048 453.551L365.011 453.376C365.315 453.365 365.554 453.11 365.543 452.805C365.532 452.501 365.277 452.262 364.972 452.273L360.56 452.429L360.405 448.017C360.394 447.712 360.138 447.474 359.834 447.485C359.529 447.496 359.291 447.751 359.302 448.056L359.477 453.019ZM1.13069 19.0358C201.979 -29.9272 338.641 28.0524 401.572 123.362C464.513 218.687 453.828 351.533 359.625 452.623L360.432 453.376C454.944 351.955 465.745 218.551 402.493 122.754C339.23 26.9416 202.021 -31.0734 0.869309 17.9636L1.13069 19.0358Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Central Symmetrical Image Layer -->
+    <div class="ingredients__central-media">
+        <div class="oblong-mask-container w-full h-full">
+            <img class="oblong-image-inner w-full h-full" src="massage.png" alt="Luxury spa and wellness massage" onerror="this.onerror=null; this.src='https://placehold.co/600x800/e5ded4/1a1a1a?text=Wellness+Spa'">
+        </div>
+    </div>
+
+    <!-- ===== ROW 1 (top): Two cards on the LEFT side ===== -->
+    <div class="ingredients__firstrow">
+        <!-- CARD 1: Meditation Retreats (far left, top) -->
+        <div class="info-card floating-element rejuvenate-card--offset-a" data-speed="0.09">
+            <div class="icon-circle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m0 0a6.75 6.75 0 016.75 6.75H5.25A6.75 6.75 0 0112 5.25zm0 0V3m0 18v-2.25m0 0A6.75 6.75 0 015.25 12h13.5A6.75 6.75 0 0112 18.75z" />
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Meditation Retreats</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">
+                Guided mindfulness practices in serene settings for deep mental clarity. Find inner peace amidst the world's most tranquil locations.
+            </p>
+        </div>
+
+        <!-- CARD 2: Spa Therapies (left side, below Meditation) -->
+        <div class="info-card floating-element rejuvenate-card--offset-b" data-speed="0.23">
+            <div class="icon-circle">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.182 9.182a4 4 0 10-6.364 0" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5z" />
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Spa Therapies</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">
+                Luxurious massages, facials, and body treatments in world-class spa sanctuaries designed for complete rejuvenation and relaxation.
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== ROW 2 (bottom): Two cards on the RIGHT side ===== -->
+    <div class="ingredients__secondrow">
+        <!-- CARD 3: Holistic Wellness (far right, top) -->
+        <div class="info-card floating-element rejuvenate-card--offset-c" data-speed="0.12" style="margin-bottom:20px;">
+            <div class="icon-circle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Holistic Wellness</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">
+                Yoga, Ayurveda, and integrative programs for complete well-being. Transformative journeys that harmonize body, mind, and spirit.
+            </p>
+        </div>
+
+        <!-- CARD 4: Sauna & Thermal (right side, below Holistic) -->
+        <div class="info-card floating-element rejuvenate-card--offset-d" data-speed="0.62" style="margin-bottom:50px;">
+            <div class="icon-circle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-6a3 3 0 00-3-3H6.75a.75.75 0 01-.75-.75V8.25a.75.75 0 01.75-.75h2.25" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-6a3 3 0 013-3h2.25a.75.75 0 00.75-.75V8.25a.75.75 0 00-.75-.75H14.25" />
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Sauna & Thermal</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">
+                Traditional saunas, hammams, and thermal baths for ultimate detoxification and purification of both body and mind.
+            </p>
+        </div>
+    </div>
+    
+</section>
+
 <!-- ===== Signature Experience: The Sicilian Experience ===== -->
 <section class="signature layout-section" id="sicilian-experience">
   <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=1600" alt="Private villa near Cefalù, Sicily" onerror="this.onerror=null; this.src='https://placehold.co/1600x900/1a1a1a/c5a880?text=The+Sicilian+Experience'">
@@ -1478,132 +1604,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ===== Rejuvenate Parallax Section ===== -->
-<section id="rejuvenate" class="parallax-section layout-section relative min-h-[70vh] py-12 px-4 md:px-8 w-full overflow-visible select-none pb-12">
-    
-    <!-- 3D Cube Animation Layer (behind content, above background) -->
-    <div class="reju-anim-layer">
-      <div class="main">
-        <div class="container initial">
-          <!-- canvas.box will be injected here by JS -->
-        </div>
-        <div class="container second">
-          <div class="marker"></div>
-        </div>
-        <div class="container third">
-          <div class="marker"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="rejuvenate-svg-bg">
-      <svg width="1056" height="556" xmlns="http://www.w3.org/2000/svg" viewBox="250 0 200 200">
-        <defs>
-          <pattern id="pat1" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="scale(8) rotate(45)" viewBox="0 0 1 1">
-            <path fill="#ffffff" d="M 0 .5 C .5 .5 0 1 .5 1 C .5 .5 1 1 1 .5 C .5 .5 1 0 .5 0 C .5 .5 0 0 0 .5 z">
-              <animate dur="5s" attributeName="d" repeatDur="indefinite" calcMode="spline" keySplines="0.36 0 0.64 1; 0.36 0 0.64 1" values="M 0 .5 C .5 .5 0 1 .5 1 C .5 .5 1 1 1 .5 C .5 .5 1 0 .5 0 C .5 .5 0 0 0 .5 z;M 0 .5 C 0 1 .5 .5 .5 1 C 1 1 .5 .5 1 .5 C 1 0 .5 .5 .5 0 C 0 0 .5 .5 0 .5 z;M 0 .5 C .5 .5 0 1 .5 1 C .5 .5 1 1 1 .5 C .5 .5 1 0 .5 0 C .5 .5 0 0 0 .5 z"/>
-            </path>
-          </pattern>
-        </defs>
-        <rect width="956" height="556" fill="url(#pat1)"/>
-      </svg>
-    </div>
-
-    <!-- Header & Graphic Vector Arrow Area -->
-    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8 lg:mb-12">
-        <div class="lg:col-span-8 flex flex-col justify-center">
-            <span class="text-xs uppercase tracking-[0.3em] text-amber-700/70 font-semibold mb-3 font-sans" style="letter-spacing:.28em;">Rejuvenate</span>
-            <h2 class="rejuvenate-heading" style="color:#1a1a1a;">
-                Wellness & Spa<br>
-                <span id="serif-underline" class="title-serif" style="color:#1a1a1a;">Experiences.</span>
-            </h2>
-            <p class="mt-3 text-gray-500 text-sm md:text-base max-w-md">
-                Indulge in transformative wellness journeys designed to restore balance and inner peace. From ancient healing traditions to modern spa therapies, we curate experiences that nourish body, mind, and spirit.
-            </p>
-        </div>
-        
-        <!-- Graphic hand-drawn style arrow SVG -->
-        <div class="hidden lg:flex lg:col-span-4 items-center justify-end relative">
-            <svg class="w-[200px] h-[200px] text-amber-700/40 transform rotate-[15deg]" viewBox="0 0 443 454" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="maskarrowtext_rejuvenate">
-                    <path class="mask-path" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M359.477 453.019C359.488 453.324 359.743 453.562 360.048 453.551L365.011 453.376C365.315 453.365 365.554 453.11 365.543 452.805C365.532 452.501 365.277 452.262 364.972 452.273L360.56 452.429L360.405 448.017C360.394 447.712 360.138 447.474 359.834 447.485C359.529 447.496 359.291 447.751 359.302 448.056L359.477 453.019ZM1.13069 19.0358C201.979 -29.9272 338.641 28.0524 401.572 123.362C464.513 218.687 453.828 351.533 359.625 452.623L360.432 453.376C454.944 351.955 465.745 218.551 402.493 122.754C339.23 26.9416 202.021 -31.0734 0.869309 17.9636L1.13069 19.0358Z" />
-                </mask>
-                <path d="M359.477 453.019C359.488 453.324 359.743 453.562 360.048 453.551L365.011 453.376C365.315 453.365 365.554 453.11 365.543 452.805C365.532 452.501 365.277 452.262 364.972 452.273L360.56 452.429L360.405 448.017C360.394 447.712 360.138 447.474 359.834 447.485C359.529 447.496 359.291 447.751 359.302 448.056L359.477 453.019ZM1.13069 19.0358C201.979 -29.9272 338.641 28.0524 401.572 123.362C464.513 218.687 453.828 351.533 359.625 452.623L360.432 453.376C454.944 351.955 465.745 218.551 402.493 122.754C339.23 26.9416 202.021 -31.0734 0.869309 17.9636L1.13069 19.0358Z" fill="currentColor"></path>
-            </svg>
-        </div>
-    </div>
-
-    <!-- Central Symmetrical Image Layer -->
-    <div class="ingredients__central-media">
-        <div class="oblong-mask-container w-full h-full">
-            <img class="oblong-image-inner w-full h-full" src="massage.png" alt="Luxury spa and wellness massage" onerror="this.onerror=null; this.src='https://placehold.co/600x800/e5ded4/1a1a1a?text=Wellness+Spa'">
-        </div>
-    </div>
-
-    <!-- ===== ROW 1 (top): Two cards on the LEFT side ===== -->
-    <div class="ingredients__firstrow">
-        <!-- CARD 1: Meditation Retreats (far left, top) -->
-        <div class="info-card floating-element rejuvenate-card--offset-a" data-speed="0.09">
-            <div class="icon-circle">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m0 0a6.75 6.75 0 016.75 6.75H5.25A6.75 6.75 0 0112 5.25zm0 0V3m0 18v-2.25m0 0A6.75 6.75 0 015.25 12h13.5A6.75 6.75 0 0112 18.75z" />
-                </svg>
-            </div>
-            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Meditation Retreats</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">
-                Guided mindfulness practices in serene settings for deep mental clarity. Find inner peace amidst the world's most tranquil locations.
-            </p>
-        </div>
-
-        <!-- CARD 2: Spa Therapies (left side, below Meditation) -->
-        <div class="info-card floating-element rejuvenate-card--offset-b" data-speed="0.23">
-            <div class="icon-circle">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.182 9.182a4 4 0 10-6.364 0" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5z" />
-                </svg>
-            </div>
-            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Spa Therapies</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">
-                Luxurious massages, facials, and body treatments in world-class spa sanctuaries designed for complete rejuvenation and relaxation.
-            </p>
-        </div>
-    </div>
-
-    <!-- ===== ROW 2 (bottom): Two cards on the RIGHT side ===== -->
-    <div class="ingredients__secondrow">
-        <!-- CARD 3: Holistic Wellness (far right, top) -->
-        <div class="info-card floating-element rejuvenate-card--offset-c" data-speed="0.12" style="margin-bottom:20px;">
-            <div class="icon-circle">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Holistic Wellness</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">
-                Yoga, Ayurveda, and integrative programs for complete well-being. Transformative journeys that harmonize body, mind, and spirit.
-            </p>
-        </div>
-
-        <!-- CARD 4: Sauna & Thermal (right side, below Holistic) -->
-        <div class="info-card floating-element rejuvenate-card--offset-d" data-speed="0.62" style="margin-bottom:50px;">
-            <div class="icon-circle">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-6a3 3 0 00-3-3H6.75a.75.75 0 01-.75-.75V8.25a.75.75 0 01.75-.75h2.25" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-6a3 3 0 013-3h2.25a.75.75 0 00.75-.75V8.25a.75.75 0 00-.75-.75H14.25" />
-                </svg>
-            </div>
-            <h3 class="text-lg font-semibold tracking-tight mb-2" style="color:#1a1a1a;">Sauna & Thermal</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">
-                Traditional saunas, hammams, and thermal baths for ultimate detoxification and purification of both body and mind.
-            </p>
-        </div>
-    </div>
-    
 </section>
 
 <section class="newsletter-cta layout-section">
